@@ -1,0 +1,11 @@
+# Go
+happy
+
+# Files
+.DS_Store
+
+# Editor files
+$~
+*.swp
+*.swo
+*.swn
