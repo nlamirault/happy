@@ -1,0 +1,31 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "yRNw/uu/4N7XHVe1PHtKPl6xtDg=",
+			"path": "github.com/Sirupsen/logrus",
+			"revision": "1445b7a38228c041834afc69231b7966b9943397",
+			"revisionTime": "2016-11-08T19:08:11Z"
+		},
+		{
+			"checksumSHA1": "yyAzHoiVLu+xywYI2BDyRq6sOqE=",
+			"path": "github.com/google/go-querystring/query",
+			"revision": "9235644dd9e52eeae6fa48efd539fdc351a0af53",
+			"revisionTime": "2016-03-11T01:20:12Z"
+		},
+		{
+			"checksumSHA1": "zwAAmP4Hx8lZe9Jt/2zTZeRvv7k=",
+			"path": "github.com/xanzy/go-gitlab",
+			"revision": "266a89f37c1e225c1afb4dae8bad678c973f564f",
+			"revisionTime": "2016-11-08T15:13:40Z"
+		},
+		{
+			"checksumSHA1": "2e4afOQfHP7YB4P68v6SlnAVJDk=",
+			"path": "golang.org/x/sys/unix",
+			"revision": "9a2e24c3733eddc63871eda99f253e2db29bd3b9",
+			"revisionTime": "2016-11-08T14:26:43Z"
+		}
+	],
+	"rootPath": "github.com/nlamirault/happy"
+}
