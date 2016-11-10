@@ -15,8 +15,10 @@
 package main
 
 import (
+	"crypto/tls"
 	"flag"
 	"fmt"
+	"net/http"
 	"os"
 	"os/signal"
 	"syscall"
@@ -43,7 +45,7 @@ var (
 func init() {
 	// parse flags
 	flag.StringVar(&token, "token", "", "Gitlab API token")
-	flag.StringVar(&gitlabURL, "gitlabURL", "https://gitlab.com", "Gitlab URL")
+	flag.StringVar(&gitlabURL, "gitlabURL", "", "Gitlab URL")
 	flag.BoolVar(&dryrun, "dry-run", false, "do not change branch settings just print the changes that would occur")
 	flag.BoolVar(&version, "version", false, "print version and exit")
 	flag.BoolVar(&debug, "d", false, "run in debug mode")
@@ -93,6 +95,16 @@ func main() {
 	}()
 
 	client := gitlab.NewClient(nil, token)
+	if gitlabURL != "" {
+		cfg := &tls.Config{
+			InsecureSkipVerify: true,
+		}
+		http.DefaultClient.Transport = &http.Transport{
+			TLSClientConfig: cfg,
+		}
+		client.SetBaseURL(gitlabURL)
+	}
+	logrus.Debugf("URL: %s", client.BaseURL())
 
 	// Get the current user
 	user, _, err := client.Users.CurrentUser()
