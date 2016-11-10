@@ -16,7 +16,7 @@ You can download the binaries :
 ## Usage
 
 ```bash
-./happy -h
+$ happy -h
 happy - 0.1.0
   -d    run in debug mode
   -dry-run
@@ -30,8 +30,7 @@ happy - 0.1.0
 ```
 
 ```bash
-./happy -token 2468 -dry-run
-./happy -token $HAPPY_TOKEN -dry-run
+$ happy -token 2468 -dry-run
 [UPDATE] TbcGit:master will be changed to protected
 [OK] road-to-modern-devops:master is already protected
 [UPDATE] eudyptula:master will be changed to protected
