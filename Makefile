@@ -15,7 +15,7 @@
 APP = happy
 
 VERSION=$(shell \
-        grep "const Version" version/version.go \
+        grep "VERSION =" happy.go \
         |awk -F'=' '{print $$2}' \
         |sed -e "s/[^0-9.]//g" \
 	|sed -e "s/ //g")
